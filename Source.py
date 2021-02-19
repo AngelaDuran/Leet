@@ -40,9 +40,9 @@ print("Output: " + str(checkMissing(nums)))
 #Single Number
 #works if starting with 1 (need negatives as well)
 #nums = [4,1,2,1,2]
-nums = [1]
-missing = []
+#missing = []
 
+'''
 for i in range(len(nums)):
     if i+1 in nums:
         missing.append(True)
@@ -54,6 +54,27 @@ for i in range(len(missing)):
         result = nums.count(i+1)
         if(result != 2):
             print(i+1) #return i+1
+            '''
+
+
+#Single Number (works for negatives)
+nums = [1,1,0,-1,0,-2,-2]
+missing = []
+counter = 0
+for i in range(min(nums), max(nums)+1):
+
+    if min(nums) + counter in nums:
+        missing.append(True)
+    else:
+        missing.append(False)
+    counter += 1
+
+for i in range(len(missing)):
+    if missing[i] == True:
+        result = nums.count(min(nums) + i)
+        if (result != 2):
+            print(min(nums) + i) #return min(nums) + i
+
 
 
 
