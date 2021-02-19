@@ -58,6 +58,7 @@ for i in range(len(missing)):
 
 
 #Single Number (works for negatives)
+'''
 nums = [1,1,0,-1,0,-2,-2]
 missing = []
 counter = 0
@@ -74,8 +75,21 @@ for i in range(len(missing)):
         result = nums.count(min(nums) + i)
         if (result != 2):
             print(min(nums) + i) #return min(nums) + i
+'''
+
+#Single Number
+# set of letters
+nums = [0,1,1,-1,-1]
 
 
+container = set([])
 
 
+for i in range(len(nums)):
 
+    if nums[i] in container:
+        container.remove(nums[i])
+    else:
+        container.add(nums[i])
+
+print(list(container)[0]) #return list(container)[0]
